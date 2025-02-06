@@ -29,7 +29,7 @@ def home():
     return render_template("index.html", short_url=None)
 
 
-@app.route('/<short_code')
+@app.route('/<short_code>')
 def redirect_to_url(short_code):
     long_url = url_db.get(short_code)  # Retrieve the original URL
     if long_url:
@@ -39,4 +39,5 @@ def redirect_to_url(short_code):
 
 # Run the Flask app when the script is executed
 if __name__ == '__main__':
+    print("Starting Flask server...")
     app.run(debug=True)
