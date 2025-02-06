@@ -26,6 +26,12 @@ def home():
     # Display form with welcome message
     return render_template("index.html", short_url=None)
 
+@app.route('/<short_code')
+def redirect_to_url(short_code):
+    long_url = url_db.get(short_code) # Retrieve the original URL
+    if long_url:
+        return redirect(long_url) # Redirect to the original URL
+    return "URL not found", 404 # Show error if code doesn't exist
 
 # Run the Flask app when the script is executed
 if __name__ == '__main__':
