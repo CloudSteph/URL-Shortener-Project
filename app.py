@@ -1,5 +1,5 @@
 # Import neccessary modules
-from flask import Flask, request
+from flask import Flask, request, render_template
 import random
 import string
 
@@ -17,20 +17,14 @@ def generate_short_code(length=6):
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        long_url = request.form['long_url']
-        short_code = generate_short_code()
-        url_db[short_code] = long_url
-        short_url = request.host_url + short_code
-        return f'Welcome to the URL Shortener!"<br>Shortened URL: <a href="{short_url}">{short_url}</a>'
+        long_url = request.form['long_url'] # Get user input from form
+        short_code = generate_short_code() # Generate a short code
+        url_db[short_code] = long_url # Store URL in dictionary
+        short_url = request.host_url + short_code # Construct short URL
+        return render_template("index.html", short_url=short_url)
 
     # Display form with welcome message
-    return '''
-        <h1>Welcome to the URL Shortener!</h1>
-        <form method="post">
-            Enter URL: <input type="text" name="long_url">
-            <input type="submit" value="Shorten">
-        </form>
-    '''
+    return render_template("index.html", short_url=None)
 
 
 # Run the Flask app when the script is executed
