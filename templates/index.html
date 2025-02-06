@@ -49,7 +49,6 @@
         <input type="submit" value="Shorten">
     </form>
 
-    # Check if short_url exists and displays the shortened URL as a clickable link.
     {% if short_url %}
         <p>Your shortened URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
     {% endif %}
