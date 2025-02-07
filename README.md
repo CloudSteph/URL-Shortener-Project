@@ -26,7 +26,7 @@ url_shortener/
 
 ## 🛠️ Setup Instructions
 
-### **1. Clone the Repository**
+**1. Clone the Repository**
 if using Github:
 '''bash
 git clone <your-repo-url>
@@ -49,9 +49,9 @@ pip install flask
 python app.py
 
 ## 🖥️ How to use the URL Shortener
-- 1. Visit the provided site from your terminal in your browser
-- 2. Enter a long URL and click **Shorten**
-- 3. Click on the generated shortened url provided and that should redirect you to the original URL! 🎉
+1. Visit the provided site from your terminal in your browser
+2. Enter a long URL and click **Shorten**
+3. Click on the generated shortened url provided and that should redirect you to the original URL! 🎉
 
 ## 🛠️ Next Steps:
 ◆ Store shortened URLs in SQLite (so they don't disappear on the restart).
@@ -61,26 +61,6 @@ python app.py
 ## 👩🏻‍💻 Author
 
 Created by Stephanie Liew 🚀
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
