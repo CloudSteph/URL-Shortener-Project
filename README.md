@@ -28,7 +28,8 @@ url_shortener/
 
 **1. Clone the Repository**
 
-'git clone https://github.com/CloudSteph/URL-Shortener-Project.git'
+'''bash
+$ git clone https://github.com/CloudSteph/URL-Shortener-Project.git
 
 **2. Set Up a Virtual Environment**
 
