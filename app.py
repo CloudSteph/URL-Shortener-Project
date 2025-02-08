@@ -1,4 +1,4 @@
-# Import neccessary modules
+# Import necessary modules
 from flask import Flask, request, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 import random
