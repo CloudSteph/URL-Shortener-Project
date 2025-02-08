@@ -6,10 +6,10 @@ This is a **simple URL shortner** built with Flask. It allows users to:
 ✅ Redirect users when they visit the short URL
 
 ## 📌 Features
-- Flask web application
-- Centered input form for URL entry
-- Randomized short URLs
-- Redirect functionality for shortened links
+- Shorten long URLs into unique short links
+- Redirect users from short URLs to their original links.
+- Uses SQLite for storing and retrieving shortened URLs.
+- Minimal UI for easy interation
 
 ---
 
@@ -24,26 +24,27 @@ url_shortener/
 
 ---
 
-## 🛠️ Setup Instructions
+## ⚙️ Setup Instructions
 
 **1. Clone the Repository**
-if using Github:
-'''bash
-git clone <your-repo-url>
-cd url_shortener
 
-**Or, navigate to your project folder manually:**
-cd PyCharmProjects/url_shortener # If using PyCharmProjects
-cd Desktop/url_shortener # If using Desktop
+$ git clone https://github.com/CloudSteph/URL-Shortener-Project.git
 
 **2. Set Up a Virtual Environment**
+
 Create and activate a virtual environment:
+
 python3 -m venv venv
 source venv/bin/activate
 
 **3. Install Dependencies**
+
 Install Flask:
 pip install flask
+
+**4. Initialize the SQLite Database**
+
+python initialize_db.py
 
 **4. Run the Flask.app**
 python app.py
@@ -70,11 +71,3 @@ Created by Stephanie Liew 🚀
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> 6ed2886c393de16947b9699c6fc4edcf75c46c1f
