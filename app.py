@@ -41,28 +41,4 @@ def home():
 
         # Save the new URL mapping to the database
         new_url = URL(short_code=short_code, long_url=long_url)
-        db.session.add(new_url)
-        db.session.commit()
-
-        # Construct the full short URL to display
-        short_url = request.host_url + short_code
-        return render_template("index.html", short_url=short_url)
-
-    # Display form without a short URL
-    return render_template("index.html", short_url=None)
-
-
-# Route to handle redirection from short URL to the original long URL
-@app.route('/<short_code>')
-def redirect_to_url(short_code):
-    url_entry = URL.query.filter_by(short_code=short_code).first()  # Look up the short code
-    if url_entry:
-        return redirect(url_entry.long_url)  # Redirect to the original URL
-    return "URL not found", 404  # Show error if code doesn't exist
-
-
-# Run the Flask app when the script is executed and create database tables if they don't exist
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+        db

@@ -8,48 +8,69 @@ This is a **simple URL shortner** built with Flask. It allows users to:
 ## 📌 Features
 - Shorten long URLs into unique short links
 - Redirect users from short URLs to their original links.
-- Uses SQLite for storing and retrieving shortened URLs.
+- Uses SQLite database for storing and retrieving shortened URLs.
 - Minimal UI for easy interation
+- Built with **Flask** and **SQLite**
 
 ---
 
 ## 📁 Project Structure
-
+```
 url_shortener/ 
-│── app.py # Flask (backend) 
-│── venv/ # Virtual environment 
+│── app.py      	# Flask (backend) 
+│── venv/       	# Virtual environment 
 │── templates/ 
-│ ├── index.html # HTML file for user input form (frontend)
-│── README.md # Project documentation
+│ ├── index.html 	# HTML file for user input form (frontend)
+│── README.md 		# Project documentation
+```
 
 ---
 
 ## ⚙️ Setup Instructions
 
 **1. Clone the Repository**
-
 ```
 $ git clone https://github.com/CloudSteph/URL-Shortener-Project.git
 ```
 
-**2. Set Up a Virtual Environment**
+**2. Navigate into the project folder**
+```
+$ cd url_shortener
+```
 
+**3. Set Up a Virtual Environment**
 Create and activate a virtual environment:
-
-python3 -m venv venv
-source venv/bin/activate
-
-**3. Install Dependencies**
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
+**4. Install Dependencies**
 
 Install Flask:
-pip install flask
+```
+$ pip install -r requirements.txt
+```
 
-**4. Initialize the SQLite Database**
+**5. Create the Database**
+Run below inside Python interactive mode:
+```
+$ python
+```
 
-python initialize_db.py
+Then, inside Python type below, this creates database.db inside the project:
+```
+$ from app import app, db
+$ with app.app_context():
+$	db.create_all()
+$ exit()
+```
 
-**4. Run the Flask.app**
-python app.py
+**6. Run the Flask.app**
+Start the application by running:
+```
+$ python app.py
+```
+✔️ Flask should now be running at the provided site: http://127.0.0.1:5000/.
 
 ## 🖥️ How to use the URL Shortener
 1. Visit the provided site from your terminal in your browser
