@@ -31,12 +31,26 @@
             backdrop-filter: blur(12px); /* Glassmorphism effect*/
         }
 
-        .short-url {
-            margin-top: 25px;
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%
+            max-width: 500px;
+            margin: 0 auto;
             padding: 12px;
-            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
+            font-size: 16px;
+            border: 2px solid #ccc;
             border-radius: 8px;
-            word-break: break-word; /* Prevents text overflow */
+            box-sizing: border-box;
         }
 
         .btn-custom {
@@ -53,31 +67,24 @@
             background: #0073e6; /* Slightly darker blue on hover */
         }
 
-        input[type="url"] {
-            font-size: 16px;
+        .short-url {
+            margin-top: 25px;
             padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            width: 100%;
-            margin-bottom: 15px;
-            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
+            border-radius: 8px;
+            word-break: break-word; /* Prevents text overflow */
         }
 
-        input[type="text"] {
-            font-size: 16px;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            width: 100%;
-            box-sizing: border-box;
+        .short-url .form-control {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-4">URL Shortener</h1>
+        <h1 class="mb-4">QuickSnip</h1>
         <form method="POST">
-            <div class="mb-4">
+            <div class="form-group">
                 <label for="long_url" class="form-label">Enter the URL to shorten:</label>
                 <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
             </div>
@@ -88,9 +95,7 @@
         {% if short_url %}
             <div class="short-url mt-4">
                 <p>Shortened URL:</p>
-
                 <input type="text" id="shortURL" class="form-control text-center" value="{{ short_url }}" readonly>
-
                 <button class="btn btn-success mt-3" onclick="copyToClipboard()">Copy</button>
             </div>
         {% endif %}
