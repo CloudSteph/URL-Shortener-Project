@@ -4,53 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
+
+    <!-- Bootstrap CDN for Styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        /* Center the header and form on the page */
+        /* Center the header and form on the page with blue ombre background */
         body {
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        input[type="text"] {
-            padding: 8px;
-            width: 250px;
-            margin-right: 10px;
-        }
-        input[type="submit"] {
-            padding: 8px 15px;
-            background-color: blue;
+            background: linear-gradient(to bottom, #007bff, #003366); /* Light Blue to Dark Blue */
             color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 60%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(12px); /* Glassmorphism effect*/
+        }
+
+        .short-url {
+            margin-top: 25px;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
+            border-radius: 8px;
+            word-break: break-word; /* Prevents text overflow */
+        }
+
+        .btn-custom {
+            background: #1e90ff; /* Bright Blue */
             border: none;
-            cursor: pointer;
-            border-radius: 5px;
+            padding: 12px 18px;
+            color: white;
+            font-size: 18px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background: #0073e6; /* Slightly darker blue on hover */
+        }
+
+        input[type="url"] {
+            font-size: 16px;
+            padding: 12px;
+        }
+
+        input[type="text"] {
+            font-size: 16px;
+            padding: 12px;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1 class="mb-4">URL Shortener</h1>
+        <form method="POST">
+            <div class="mb-4">
+                <label for="long_url" class="form-label">Enter the URL to shorten:</label>
+                <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example/com" required>
+            </div>
 
-    <h1>Welcome to the URL Shortener!</h1>
+            <button type="submit" class="btn btn-custom w-100">Shorten URL</button>
+        </form>
 
-    <form method="post">
-        <input type="text" name="long_url" placeholder="Enter URL" required>
-        <input type="submit" value="Shorten">
-    </form>
+        {% if short_url %}
+            <div class="short-url mt-4">
+                <p>Shortened URL:</p>
 
-    {% if short_url %}
-        <p>Your shortened URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
-    {% endif %}
+                <input type="text" id="shortURL" class="form-control text-center" value="{{ short_url }}" readonly>
+
+                <button class="btn btn-success mt-3" onclick="copyToClipboard()">Copy</button>
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("shortUrl");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("Copied: " + copyText.value);
+        }
+    </script>
 </body>
 </html>
