@@ -21,8 +21,8 @@
         }
 
         .container {
-            width: 60%;
-            max-width: 800px;
+            width: 100%;
+            max-width: 600px;
             background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
             padding: 30px;
             border-radius: 12px;
@@ -31,20 +31,9 @@
             backdrop-filter: blur(12px); /* Glassmorphism effect*/
         }
 
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
         .form-control {
-            width: 500px
-            max-width: 100%;
+<!--            width: 500px-->
+<!--            max-width: 100%;-->
             margin: 0 auto;
             padding: 12px;
             font-size: 16px;
@@ -84,8 +73,8 @@
     <div class="container">
         <h1 class="mb-4">QuickSnip</h1>
         <form method="POST">
-            <div class="form-group">
-                <label for="long_url" class="form-label">Enter the URL to shorten:</label>
+            <div class="row mb-3 justify-content-center">
+                <label for="long_url" class="col-sm-3 col-form-label text-start">Enter the URL to shorten:</label>
                 <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
             </div>
 
