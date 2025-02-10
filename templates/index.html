@@ -56,11 +56,20 @@
         input[type="url"] {
             font-size: 16px;
             padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-bottom: 15px;
+            box-sizing: border-box;
         }
 
         input[type="text"] {
             font-size: 16px;
             padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -70,7 +79,7 @@
         <form method="POST">
             <div class="mb-4">
                 <label for="long_url" class="form-label">Enter the URL to shorten:</label>
-                <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example/com" required>
+                <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
             </div>
 
             <button type="submit" class="btn btn-custom w-100">Shorten URL</button>
