@@ -31,10 +31,21 @@
             backdrop-filter: blur(12px); /* Glassmorphism effect*/
         }
 
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
         .form-control {
-            width: 500px
-            max-width: 100%;
-            margin: 0 auto;
+            width: 100%
+            max-width: 600px;
             padding: 12px;
             font-size: 16px;
             border: 2px solid #ccc;
@@ -43,13 +54,18 @@
         }
 
         .btn-custom {
+            weight: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
             background: #1e90ff; /* Bright Blue */
             border: none;
-            padding: 12px 18px;
+            padding: 12px 20px;
             color: white;
             font-size: 18px;
-            border-radius: 6px;
-            transition: 0.3s;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s;
         }
 
         .btn-custom:hover {
@@ -73,8 +89,8 @@
     <div class="container">
         <h1 class="mb-4">QuickSnip</h1>
         <form method="POST">
-            <div class="row mb-3 justify-content-center">
-                <label for="long_url" class="col-sm-3 col-form-label text-start">Enter the URL to shorten:</label>
+            <div class="form-group">
+                <label for="long_url" class="form-label">Enter the URL to shorten:</label>
                 <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
             </div>
 
