@@ -4,106 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
-
     <!-- Bootstrap CDN for Styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        /* Center the header and form on the page with blue ombre background */
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to bottom, #007bff, #003366); /* Light Blue to Dark Blue */
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            backdrop-filter: blur(12px); /* Glassmorphism effect*/
-        }
-
-        input[type="url"] {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-        }
-
-        .btn-custom {
-            background: #1e90ff; /* Bright Blue */
-            border: none;
-            padding: 12px 18px;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-custom:hover {
-            background: #0073e6; /* Slightly darker blue on hover */
-        }
-
-        .short-url {
-            margin-top: 25px;
-            padding: 12px;
-            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
-            border-radius: 8px;
-            word-break: break-word; /* Prevents text overflow */
-        }
-
-        input[type="text"] {
-            font-size: 16px;
-            padding: 12px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            margin-top: 10px;
-            box-sizing: border-box;
-            width: 100%;
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="mb-4">QuickSnip</h1>
-        <form method="POST">
-            <div class="mb-3 text-start">
-                <label for="long_url" class="form-label">Enter the URL to shorten:</label>
-                <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
-            </div>
-            <button type="submit" class="btn btn-custom w-100">Shorten URL</button>
-        </form>
-
-        {% if short_url %}
-            <div class="short-url mt-4">
-                <p>Shortened URL:</p>
-                <input type="text" id="shortURL" class="form-control text-center" value="{{ short_url }}" readonly>
-                <button class="btn btn-success mt-3" onclick="copyToClipboard()">Copy</button>
-            </div>
-        {% endif %}
+    <!-- Centering Wrapper -->
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
+            <h1>QuickSnip</h1>
+            <p>Shorten your long URLS quickly and easily with our simple tool, QuickSnip.</p>
+        </header>
+        <div class="container">
+            <form id="shorten-form" method="POST">
+            <!-- Form Group for URL Input -->
+                <div class="mb-3 text-start">
+                    <label for="long_url" class="form-label">Enter the URL to shorten:</label>
+                    <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
+                </div>
+            <!-- Submit Button -->
+                <button type="submit" class="btn">Shorten URL</button>
+            </form>
+        </div>
+         <!-- Display Shortened URL if available -->
+            {% if short_url %}
+                <div class="short-url mt-4">
+                    <p>Shortened URL:</p>
+                    <!-- Read Only input field for shortened url -->
+                    <input type="text" id="shortURL" class="form-control text-center" value="{{ short_url }}" readonly>
+                    <!-- Copy button -->
+                    <button class="btn" onclick="copyToClipboard()">Copy</button>
+                </div>
+            {% endif %}
     </div>
-
+    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function copyToClipboard() {
-            var copyText = document.getElementById("shortUrl");
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(copyText.value);
-            alert("Copied: " + copyText.value);
-        }
-    </script>
+    <!-- Custom JavaScript -->
+   <script src="static/js/main.js"></script>
 </body>
 </html>

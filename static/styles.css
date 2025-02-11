@@ -1,0 +1,104 @@
+/* Global Styles */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #007bff, #003366); /* Light Blue to Dark Blue */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Wrapper Styles */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Header Styling */
+header h1 {
+    margin-bottom: 20px;
+    font-size: 3em;
+}
+
+/* Description Styling */
+header p {
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Glassmorphism Container */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px); /* Glassmorphism effect */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Input Field Styling */
+input[type="url"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* Custom Button Styles */
+.btn {
+    background: #1e90ff; /* Bright Blue */
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.btn:hover {
+    background: #0073e6; /* Slightly darker blue on hover */
+}
+
+/* Shortened URL Display Box */
+.short-url {
+    margin-top: 25px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
+    border-radius: 8px;
+    word-break: break-word; /* Prevents text overflow */
+}
+
+/* Read-Only Input Field for Shortened URL */
+input[type="text"] {
+    font-size: 1em;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
