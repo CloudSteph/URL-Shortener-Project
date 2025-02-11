@@ -31,41 +31,25 @@
             backdrop-filter: blur(12px); /* Glassmorphism effect*/
         }
 
-        .form-group {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .form-control {
-            width: 100%
-            max-width: none;
-            padding: 12px;
+        input[type="url"] {
+            width: 100%;
+            padding: 15px;
             font-size: 16px;
             border: 2px solid #ccc;
             border-radius: 8px;
+            margin-bottom: 20px;
             box-sizing: border-box;
         }
 
         .btn-custom {
-            weight: 100%;
-            max-width: 200px;
-            margin: 0 auto;
-            display: block;
             background: #1e90ff; /* Bright Blue */
             border: none;
-            padding: 12px 20px;
+            padding: 12px 18px;
             color: white;
             font-size: 18px;
             font-weight: bold;
             border-radius: 8px;
-            transition: background 0.3s;
+            transition: 0.3s;
         }
 
         .btn-custom:hover {
@@ -80,8 +64,14 @@
             word-break: break-word; /* Prevents text overflow */
         }
 
-        .short-url .form-control {
+        input[type="text"] {
+            font-size: 16px;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
             margin-top: 10px;
+            box-sizing: border-box;
+            width: 100%;
         }
     </style>
 </head>
@@ -89,11 +79,9 @@
     <div class="container">
         <h1 class="mb-4">QuickSnip</h1>
         <form method="POST">
-            <div class="form-group">
-                <label for="long_url" class="col-sm-2 col-form-label text-end">Enter the URL to shorten:</label>
-                <div class="col-sm-10ß">
-                    <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
-                </div>
+            <div class="mb-3 text-start">
+                <label for="long_url" class="form-label">Enter the URL to shorten:</label>
+                <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
             </div>
             <button type="submit" class="btn btn-custom w-100">Shorten URL</button>
         </form>
