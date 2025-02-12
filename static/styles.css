@@ -1,10 +1,10 @@
 /* Global Styles */
 body {
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #007bff, #003366); /* Light Blue to Dark Blue */
+    background: linear-gradient(to right, #007bff, #003366); /* Light Blue to Dark Blue */
     color: white;
     font-family: Arial, sans-serif;
 }

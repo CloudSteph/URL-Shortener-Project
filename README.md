@@ -14,6 +14,11 @@ This is a **simple URL shortner** built with Flask. It allows users to:
 
 ---
 
+## 📷Screenshots
+![url-shortener-screenshot1.png](../../url-shortener-screenshot1.png)
+![url-shortener-screenshot2.png](../../url-shortener-screenshot2.png)
+---
+
 ## 📁 Project Structure
 ```
 url_shortener/ 
