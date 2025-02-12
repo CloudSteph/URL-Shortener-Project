@@ -24,21 +24,26 @@
                     <label for="long_url" class="form-label">Enter the URL to shorten:</label>
                     <input type="url" id="long_url" name="long_url" class="form-control" placeholder="https://example.com" required>
                 </div>
-            <!-- Submit Button -->
                 <button type="submit" class="btn">Shorten URL</button>
             </form>
         </div>
-         <!-- Display Shortened URL if available -->
-            {% if short_url %}
-                <div class="short-url mt-4">
-                    <p>Shortened URL:</p>
-                    <!-- Read Only input field for shortened url -->
-                    <input type="text" id="shortURL" class="form-control text-center" value="{{ short_url }}" readonly>
-                    <!-- Copy button -->
-                    <button class="btn" onclick="copyToClipboard()">Copy</button>
-                </div>
-            {% endif %}
+        {% if short_url %}
+        <div class="short-url mt-4">
+            <label for="shortUrl" class="short-url-label">Shortened URL:</label>
+            <a href="{{ short_url }}" id="shortUrl" class="form-control" target="_blank">{{ short_url }}</a>
+            <button class="btn-copy" onclick="copyToClipboard()">Copy</button>
+        </div>
+        {% endif %}
     </div>
+
+<!--    &lt;!&ndash; Custom Alert Modal &ndash;&gt;-->
+<!--    <div id="customAlert" class="modal">-->
+<!--        <div class="modal-content">-->
+<!--            <p id="alertMessage"></p>-->
+<!--            <button id="closeBtn" class="btn">OK</button>-->
+<!--        </div>-->
+<!--    </div>-->
+
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JavaScript -->

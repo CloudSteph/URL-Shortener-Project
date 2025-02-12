@@ -16,7 +16,6 @@ body {
     justify-content: center;
     height: 100%;
     text-align: center;
-    padding: 20px;
 }
 
 /* Header Styling */
@@ -47,9 +46,11 @@ form {
     flex-direction: column;
 }
 
+/* Label Styles */
 label {
     font-size: 1.5em;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 /* Input Field Styling */
@@ -73,32 +74,71 @@ input[type="url"] {
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: 0.3s, transform 0.1s;
     cursor: pointer;
     margin-left: 20px;
     margin-right: 20px;
+    box-shadow: 0 2px #006bb3;
 }
 
-.btn:hover {
+.btn:hover, .btn-copy:hover {
     background: #0073e6; /* Slightly darker blue on hover */
 }
 
-/* Shortened URL Display Box */
+.btn:active, .btn-copy:active {
+    box-shadow: 0 2px #006bb3;
+    transform: translateY(2px);
+}
+
+/* Shortened URL label */
+.short-url-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 150px;
+    align-content: space-evenly;
+}
+
+/* Shortened URL Display Container Box */
 .short-url {
-    margin-top: 25px;
-    padding: 12px;
+    margin-top: 30px;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
     border-radius: 8px;
     word-break: break-word; /* Prevents text overflow */
+    gap: 5px;
+    display: flex;
 }
 
-/* Read-Only Input Field for Shortened URL */
-input[type="text"] {
-    font-size: 1em;
-    padding: 12px;
+/* Shorten URL Display */
+#shortUrl {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
     border: 2px solid #ccc;
     border-radius: 8px;
-    margin-top: 10px;
-    box-sizing: border-box;
+    color: blue;
+    background-color: whitesmoke;
+    text-decoration: 0;
     width: 100%;
+    font-size: 20px;
+    align-content: space-evenly;
+}
+
+#shortUrl:hover {
+    text-decoration: underline;
+}
+
+.btn-copy {
+    background: #1e90ff; /* Bright Blue */
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s, transform 0.1s;
+    margin: 5px 10px;
+    display: inline-block;
+    cursor: pointer;
 }
