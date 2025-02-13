@@ -14,20 +14,54 @@ This is a **simple URL shortner** built with Flask. It allows users to:
 
 ---
 
-## 📷Screenshots
-![url-shortener-screenshot1.png](../../url-shortener-screenshot1.png)
-![url-shortener-screenshot2.png](../../url-shortener-screenshot2.png)
+## 🛠️ Technologies Used (Tech Stack)
+- Backend: Flask (Python)
+- Database: SQLite (default)
+- Front: HTML, CSS, JavaScript
+- Deployment: PythonAnywhere [Hosting Platform]
+
+---
+
+## Acknowledgements
+
+- **[Flask Documentation](https://flask.palletsprojects.com/en/stable/)**
+- **[Bootstrap](https://getbootstrap.com)**
+- **[HTML](https://www.w3schools.com/html/default.asp)**
+- **[CSS](https://www.w3schools.com/css/default.asp)**
+- **[JavaScript](https://www.w3schools.com/js/default.asp)**
+- **[Python](https://www.w3schools.com/python/default.asp)**
+- **[PythonAnywhere](https://www.youtube.com/watch?v=z7dYIKm4np8)**
+
+---
+
+## 📷 Screenshots
+![img.png](project_images/img.png)
+![img_1.png](project_images/img_1.png)
 ---
 
 ## 📁 Project Structure
 ```
 url_shortener/ 
-│── app.py      	# Flask (backend) 
-│── venv/       	# Virtual environment 
+│── app.py      	    # Flask (backend) 
+│── venv/       	    # Virtual environment 
+│── instance
+│ ├── database.db       # SQLite database file storing URL mappings
 │── templates/ 
-│ ├── index.html 	# HTML file for user input form (frontend)
-│── README.md 		# Project documentation
+│ ├── index.html 	    # HTML file for user input form (frontend)
+│── static/
+│ ├── styles.css        # Custom CSS Styles for the UI View of the webpage
+│ ├── js
+│   ├── main.js         # Custom JavaScript for handling copy to clipboard
+│── requirements.txt    # Lists Python dependencies required 
+│── README.md 		    # Project documentation
 ```
+---
+
+## Project Deployment: 
+
+Website: **[QuickSnip](https://stephcloud.pythonanywhere.com)**
+
+- Feel free to check out the url shortener above that I've created or clone my repository and test it out.
 
 ---
 
@@ -85,7 +119,7 @@ Start the application by running:
 ```
 $ python app.py
 ```
-✔️ Flask should now be running at the provided site: http://127.0.0.1:5000/.
+✔️ Flask should now be running at the provided local site: http://127.0.0.1:5000/.
 
 ## 🖥️ How to use the URL Shortener
 1. Visit the provided site from your terminal in your browser
