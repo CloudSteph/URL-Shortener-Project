@@ -135,6 +135,12 @@ $ python app.py
 
 Created by Stephanie Liew 🚀
 
+---
+
+## LICENSE
+
+This project is licensed under the [MIT License](LICENSE.md).
+
 
 
 
